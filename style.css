@@ -200,7 +200,25 @@ a {
 .project-links a:hover {
   text-decoration: underline;
 }
-
+/* ===== Experience Timeline ===== */
+.timeline {
+  margin-top: 2rem;
+}
+.timeline-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+.date {
+  color: var(--gray);
+  font-style: italic;
+  margin: 0.3rem 0 0.8rem;
+}
+.timeline-item ul {
+  padding-left: 1.2rem;
+}
 /* ===== Contact ===== */
 .contact-info {
   max-width: 600px;
