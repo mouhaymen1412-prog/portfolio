@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Language switching
   const langButtons = document.querySelectorAll('.lang-btn');
   let currentLang = localStorage.getItem('portfolio-lang') || 'ar';
   
+  // Update UI on load
   updateLanguage(currentLang);
-  updateBodyClass(currentLang);
+  document.body.className = `lang-${currentLang}`;
 
+  // Language switch logic
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       currentLang = btn.dataset.lang;
+      
+      // Update language
       updateLanguage(currentLang);
-      updateBodyClass(currentLang);
+      
+      // Update body class for RTL/LTR
+      document.body.className = `lang-${currentLang}`;
+      
+      // Save preference
       localStorage.setItem('portfolio-lang', currentLang);
       
       // Update active button
@@ -20,28 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function updateLanguage(lang) {
+    // Update all translatable elements
     document.querySelectorAll('[data-ar]').forEach(el => {
-      const ar = el.getAttribute('data-ar');
-      const fr = el.getAttribute('data-fr');
-      const en = el.getAttribute('data-en');
-      
-      if (lang === 'ar' && ar) el.innerHTML = ar;
-      else if (lang === 'fr' && fr) el.innerHTML = fr;
-      else if (lang === 'en' && en) el.innerHTML = en;
+      if (lang === 'ar' && el.hasAttribute('data-ar')) {
+        el.innerHTML = el.getAttribute('data-ar');
+      } else if (lang === 'fr' && el.hasAttribute('data-fr')) {
+        el.innerHTML = el.getAttribute('data-fr');
+      } else if (lang === 'en' && el.hasAttribute('data-en')) {
+        el.innerHTML = el.getAttribute('data-en');
+      }
     });
   }
-
-  function updateBodyClass(lang) {
-    document.body.className = `lang-${lang}`;
-  }
-
-  // Scroll progress indicator
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    document.querySelector('.scroll-indicator .progress').style.width = `${scrollPercent}%`;
-  });
 
   // Smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -57,24 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fade-in on scroll (simple version)
-  const observerOptions = {
-    threshold: 0.1
-  };
+  // Create floating bubbles dynamically (optional enhancement)
+  const bubbleContainer = document.querySelector('.ocean-bubbles');
+  for (let i = 0; i < 5; i++) {
+    const bubble = document.createElement('div');
+    bubble.style.position = 'absolute';
+    bubble.style.borderRadius = '50%';
+    bubble.style.background = 'rgba(224, 247, 250, 0.2)';
+    bubble.style.width = Math.random() * 30 + 10 + 'px';
+    bubble.style.height = bubble.style.width;
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.bottom = '-50px';
+    bubble.style.animation = `floatUp ${Math.random() * 10 + 10}s infinite ease-in`;
+    bubble.style.opacity = Math.random() * 0.4 + 0.2;
+    bubbleContainer.appendChild(bubble);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
+    // Add keyframes dynamically
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes floatUp {
+        0% { transform: translateY(0) rotate(0deg); opacity: ${bubble.style.opacity}; }
+        100% { transform: translateY(-100vh) rotate(${Math.random() * 360}deg); opacity: 0; }
       }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-  });
+    `;
+    document.head.appendChild(style);
+  }
 });
