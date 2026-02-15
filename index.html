@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>عبد المؤمن فركان | مطور ويب وتطبيقات محمولة</title>
-  <meta name="description" content="طالب تطوير ويب وتطبيقات محمولة | باحث عن فرصة PFE">
+  <title>عبد المهيمن فركان | مطور ويب وتطبيقات محمولة</title>
+  <meta name="description" content="طالب تطوير ويب وتطبيقات محمولة | باحث عن فرصة PFE | شغوف بالطبخ والتقنية">
   <link rel="stylesheet" href="style.css" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="lang-ar">
+<body class="lang-ar" id="body">
 
   <!-- Language Switcher -->
   <div class="lang-switcher">
@@ -20,19 +20,19 @@
     <button class="lang-btn" data-lang="en">English</button>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator">
-    <div class="progress"></div>
-  </div>
+  <!-- Ocean Bubbles Background -->
+  <div class="ocean-bubbles"></div>
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-bg"></div>
     <div class="container">
       <div class="hero-content">
         <h1>
-          <span data-ar="مرحباً، أنا" data-fr="Bonjour, je suis" data-en="Hi, I'm"></span>
-          <span class="highlight">عبد المؤمن فركان</span>
+          <span class="greeting" 
+                data-ar="مرحباً، أنا" 
+                data-fr="Bonjour, je suis" 
+                data-en="Hi, I'm"></span>
+          <span class="highlight">عبد المهيمن فركان</span>
         </h1>
         <p class="subtitle" 
            data-ar="طالب في السنة الأخيرة في تخصص <strong>تطوير الويب والتطبيقات المحمولة</strong><br>أبحث عن فرصة <strong>PFE</strong> لاكتساب خبرة ميدانية."
@@ -51,20 +51,40 @@
   <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
-      <h2 data-ar="من أنا؟" data-fr="À Propos de Moi" data-en="About Me">من أنا؟</h2>
-      <p data-ar="طالب متحمس وسريع التعلّم في تخصص تطوير الويب والتطبيقات المحمولة، مع شغف ببناء تطبيقات عملية وفعّالة. أتابع دراستي في <strong>المعهد الوطني المتخصص للتكوين المهني</strong> بالجزائر."
-         data-fr="Étudiant motivé et rapide à apprendre en développement web et mobile, passionné par la création d’applications pratiques. Je poursuis mes études à l’<strong>Institut National Spécialisé de Formation Professionnelle</strong> en Algérie."
-         data-en="A motivated and fast-learning student in Web & Mobile Development, passionate about building practical applications. Currently studying at the <strong>National Institute of Specialized Training</strong> in Algeria."></p>
-      <p data-ar="أبحث حاليًا عن فرصة لإتمام <strong>مشروع التخرج (PFE)</strong> داخل شركة لتطبيق معرفتي واكتساب خبرة ميدانية."
-         data-fr="Je cherche actuellement une opportunité pour réaliser mon <strong>Projet de Fin d’Études (PFE)</strong> au sein d’une entreprise afin d’appliquer mes compétences."
-         data-en="I’m currently seeking an opportunity to complete my <strong>Graduation Project (PFE)</strong> within a company to apply my skills and gain hands-on experience."></p>
+      <h2 
+         data-ar="من أنا؟" 
+         data-fr="À Propos de Moi" 
+         data-en="About Me">من أنا؟</h2>
+      
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="bio" 
+             data-ar="أنا طالب متحمس وسريع التعلّم في تخصص تطوير الويب والتطبيقات المحمولة، مع شغف ببناء تطبيقات عملية وفعّالة. أتابع دراستي في <strong>المعهد الوطني المتخصص للتكوين المهني</strong> بالجزائر."
+             data-fr="Je suis un étudiant motivé et rapide à apprendre en développement web et mobile, passionné par la création d’applications pratiques. Je poursuis mes études à l’<strong>Institut National Spécialisé de Formation Professionnelle</strong> en Algérie."
+             data-en="I’m a motivated and fast-learning student in Web & Mobile Development, passionate about building practical applications. Currently studying at the <strong>National Institute of Specialized Training</strong> in Algeria."></p>
+          
+          <p class="cooking-dev" 
+             data-ar="أرى أن البرمجة والطبخ وجهان لعملة واحدة: كلاهما يتطلب <strong>النظافة، التنظيم، الدقة، والإبداع</strong>. سواء كنت أُصلح خطأ في كود Laravel أو أُعد طبقًا تقليديًا جزائريًا، فإنني أتعامل مع كل مهمة بتركيز وشغف."
+             data-fr="Je considère que la programmation et la cuisine sont deux faces d’une même pièce : les deux exigent <strong>propreté, organisation, précision et créativité</strong>. Que je débogue du code Laravel ou que je prépare un plat traditionnel algérien, j’aborde chaque tâche avec concentration et passion."
+             data-en="I see coding and cooking as two sides of the same coin: both require <strong>cleanliness, organization, precision, and creativity</strong>. Whether I’m debugging Laravel code or preparing a traditional Algerian dish, I approach every task with focus and passion."></p>
+        </div>
+        <div class="about-icon">
+          <div class="icon-pair">
+            <i class="fas fa-code"></i>
+            <i class="fas fa-utensils"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section bg-light">
     <div class="container">
-      <h2 data-ar="المهارات" data-fr="Compétences" data-en="Skills">المهارات</h2>
+      <h2 
+         data-ar="المهارات" 
+         data-fr="Compétences" 
+         data-en="Technical Skills">المهارات</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <h3 data-ar="واجهة المستخدم" data-fr="Frontend" data-en="Frontend">واجهة المستخدم</h3>
@@ -104,13 +124,18 @@
   <!-- Experience Section -->
   <section id="experience" class="section">
     <div class="container">
-      <h2 data-ar="الخبرة" data-fr="Expérience" data-en="Experience">الخبرة</h2>
+      <h2 
+         data-ar="الخبرة" 
+         data-fr="Expérience" 
+         data-en="Experience">الخبرة</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <h3 data-ar="عضو – المنظمة الوطنية للطلبة الأحرار" 
-              data-fr="Membre – Organisation Nationale des Étudiants Libres"
-              data-en="Member – National Organization of Free Students">عضو – المنظمة الوطنية للطلبة الأحرار</h3>
-          <p class="date" data-ar="2023 – الحاضر • باب الزوار، الجزائر" 
+          <h3 
+             data-ar="عضو – المنظمة الوطنية للطلبة الأحرار" 
+             data-fr="Membre – Organisation Nationale des Étudiants Libres"
+             data-en="Member – National Organization of Free Students">عضو – المنظمة الوطنية للطلبة الأحرار</h3>
+          <p class="date" 
+             data-ar="2023 – الحاضر • باب الزوار، الجزائر" 
              data-fr="2023 – Aujourd’hui • Bab Ezzouar, Algérie"
              data-en="2023 – Present • Bab Ezzouar, Algeria">2023 – الحاضر • باب الزوار، الجزائر</p>
           <ul>
@@ -126,10 +151,12 @@
           </ul>
         </div>
         <div class="timeline-item">
-          <h3 data-ar="بائع متجول" 
-              data-fr="Vendeur Ambulant"
-              data-en="Street Vendor">بائع متجول</h3>
-          <p class="date" data-ar="2018 – الحاضر • الجزائر العاصمة" 
+          <h3 
+             data-ar="بائع متجول" 
+             data-fr="Vendeur Ambulant"
+             data-en="Street Vendor">بائع متجول</h3>
+          <p class="date" 
+             data-ar="2018 – الحاضر • الجزائر العاصمة" 
              data-fr="2018 – Aujourd’hui • Alger"
              data-en="2018 – Present • Algiers">2018 – الحاضر • الجزائر العاصمة</p>
           <ul>
@@ -151,7 +178,10 @@
   <!-- Projects Section -->
   <section id="projects" class="section bg-light">
     <div class="container">
-      <h2 data-ar="مواقعي" data-fr="Projets" data-en="Projects">مواقعي</h2>
+      <h2 
+         data-ar="مواقعي" 
+         data-fr="Projets" 
+         data-en="Projects">مواقعي</h2>
       <p class="section-note" 
          data-ar="*(استبدل هذه الأمثلة بمواقعك الفعلية)*"
          data-fr="*(Remplacez par vos projets réels)*"
@@ -160,7 +190,7 @@
       <div class="projects-grid">
         <div class="project-card">
           <h3>[اسم الموقع 1]</h3>
-          <p>[وصف موجز للمشروع، التقنيات المستخدمة، الهدف منه.]</p>
+          <p>[وصف موجز للمشروع، التقنيات المستخدمة.]</p>
           <div class="project-links">
             <a href="#" target="_blank">عرض مباشر</a>
             <a href="#" target="_blank">الكود المصدري</a>
@@ -181,11 +211,14 @@
   <!-- Contact Section -->
   <section id="contact" class="section bg-dark">
     <div class="container">
-      <h2 data-ar="تواصل معي" data-fr="Contactez-Moi" data-en="Get In Touch">تواصل معي</h2>
+      <h2 
+         data-ar="تواصل معي" 
+         data-fr="Contactez-Moi" 
+         data-en="Get In Touch">تواصل معي</h2>
       <p class="contact-intro" 
          data-ar="أنا منفتح على فرص PFE، التعاون، أو حتى محادثة ودية!"
          data-fr="Je suis ouvert aux opportunités de PFE, collaborations, ou simplement une discussion amicale !"
-         data-en="I'm open to PFE opportunities, collaborations, or just a friendly chat!">أنا منفتح على فرص PFE، التعاون، أو حتى محادثة ودية!</p>
+         data-en="I'm open to PFE opportunities, collaborations, or just a friendly chat!"></p>
       <div class="contact-info">
         <p><i class="fas fa-envelope"></i> <a href="mailto:mouhaymen1412@gmail.com">mouhaymen1412@gmail.com</a></p>
         <p><i class="fas fa-phone"></i> +213 774 52 17 12</p>
@@ -193,12 +226,19 @@
         <p><i class="fab fa-github"></i> <a href="https://github.com/mouhaymen1412-prog" target="_blank">github.com/mouhaymen1412-prog</a></p>
         <p><i class="fas fa-globe"></i> <a href="https://mouhaymen1412-prog.github.io/portfolio/" target="_blank">موقعي الشخصي</a></p>
       </div>
+      <div class="pfe-button">
+        <a href="mailto:mouhaymen1412@gmail.com?subject=Demande%20de%20PFE%20-%20AbdElmouhaimen%20Ferkane&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20effectuer%20mon%20PFE%20au%20sein%20de%20votre%20entreprise..." 
+           class="btn primary" 
+           data-ar="أرسل طلب PFE الآن"
+           data-fr="Envoyer une demande de PFE"
+           data-en="Send PFE Request Now">أرسل طلب PFE الآن</a>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 عبد المؤمن فركان. جميع الحقوق محفوظة.</p>
+      <p>&copy; 2026 عبد المهيمن فركان. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
