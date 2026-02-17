@@ -2,11 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const langButtons = document.querySelectorAll('.lang-btn');
   let currentLang = localStorage.getItem('portfolio-lang') || 'ar';
 
-  // Apply initial language
   updateLanguage(currentLang);
   document.body.className = `lang-${currentLang}`;
 
-  // Language switch
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       currentLang = btn.dataset.lang;
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function updateLanguage(lang) {
-    // Update greeting & name
+    // Greeting & Name
     document.querySelectorAll('.greeting').forEach(el => {
       if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
       else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
     });
 
-    // Update project titles & descriptions
+    // Project titles & desc
     document.querySelectorAll('.project-title').forEach(el => {
       if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
       else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
     });
 
-    // Update all other translatable elements
+    // Timeline dates & titles
     document.querySelectorAll('[data-ar]').forEach(el => {
       const ar = el.getAttribute('data-ar');
       const fr = el.getAttribute('data-fr');
@@ -61,61 +59,47 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (lang === 'fr' && fr) el.innerHTML = fr;
       else if (lang === 'en' && en) el.innerHTML = en;
     });
+
+    // Footer copyright
+    document.querySelectorAll('.footer-copyright').forEach(el => {
+      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
+      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
+      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
+    });
   }
 
-  // Smooth scrolling
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 90,
+          top: target.offsetTop - 80,
           behavior: 'smooth'
         });
       }
     });
   });
 
-  // Scroll progress indicator (optional enhancement)
-  const progress = document.querySelector('.scroll-indicator .progress');
-  if (progress) {
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      progress.style.width = `${scrollPercent}%`;
-    });
-  }
-
-  // Fade-in on scroll (intersection observer)
-  const observerOptions = {
-    threshold: 0.1
-  };
-
+  // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('fade-in');
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.section').forEach(section => {
-    section.classList.add('fade-in');
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.add('fade-in');
+    sec.style.opacity = 0;
+    sec.style.transform = 'translateY(20px)';
+    sec.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(sec);
   });
 
-  // Add fade-in class for CSS
   const style = document.createElement('style');
-  style.textContent = `
-    .fade-in {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-  `;
+  style.textContent = `.fade-in { opacity: 1 !important; transform: translateY(0) !important; }`;
   document.head.appendChild(style);
 });
