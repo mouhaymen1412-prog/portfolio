@@ -2,78 +2,94 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>عبد المؤمن فرقان | مطور ويب وتطبيقات محمولة</title>
-  <meta name="description" content="طالب تطوير ويب وتطبيقات محمولة | باحث عن فرصة PFE | شغوف بالطبخ والتقنية">
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-ar="عبد المهيمن فركان | بورتفوليو" data-fr="AbdElmouhaimen Ferkane | Portfolio" data-en="AbdElmouhaimen Ferkane | Portfolio">عبد المهيمن فركان | بورتفوليو</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="lang-ar">
-
-  <!-- Language Switcher -->
-  <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="ar">العربية</button>
-    <button class="lang-btn" data-lang="fr">Français</button>
-    <button class="lang-btn" data-lang="en">English</button>
-  </div>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container">
-      <h1>
-        <span class="greeting"
-              data-ar="مرحباً، أنا"
-              data-fr="Bonjour, je suis"
-              data-en="Hi, I'm"></span>
-        <span class="name"
-              data-ar="فركان عبد المؤمن"
-              data-fr="AbdElmouhaimen Ferkane"
-              data-en="AbdElmouhaimen Ferkane">فركان عبد المؤمن</span>
-      </h1>
-      <p class="subtitle"
-         data-ar="طالب في السنة الأخيرة في تخصص <strong>تطوير الويب والتطبيقات المحمولة</strong><br>أبحث عن فرصة <strong>PFE</strong> لاكتساب خبرة ميدانية."
-         data-fr="Étudiant en dernière année en <strong>Développement Web & Mobile</strong><br>À la recherche d’un <strong>stage de PFE</strong> pour acquérir une expérience professionnelle."
-         data-en="Final-year student in <strong>Web & Mobile Development</strong><br>Seeking a <strong>PFE internship</strong> to gain real-world experience."></p>
+<body class="dark lang-ar" dir="rtl">
+  <header id="hero" class="section hero-section">
+    <nav class="navbar">
+      <div class="logo"><a href="#hero">AMF</a></div>
+      <ul class="nav-links">
+        <li><a href="#about" data-ar="من أنا؟" data-fr="À propos" data-en="About">من أنا؟</a></li>
+        <li><a href="#skills" data-ar="المه��رات" data-fr="Compétences" data-en="Skills">المهارات</a></li>
+        <li><a href="#projects" data-ar="مشاريعي" data-fr="Projets" data-en="Projects">مشاريعي</a></li>
+        <li><a href="#experience" data-ar="الخبرة" data-fr="Expérience" data-en="Experience">الخبرة</a></li>
+        <li><a href="#services" data-ar="الخدمات" data-fr="Services" data-en="Services">الخدمات</a></li>
+        <li><a href="#career-objective" data-ar="الهدف المهني" data-fr="Objectif" data-en="Objective">الهدف المهني</a></li>
+        <li><a href="#contact" data-ar="تواصل معي" data-fr="Contact" data-en="Contact">تواصل معي</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ar">العربية</button>
+        <button class="lang-btn" data-lang="fr">Français</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <!-- moon/sun svg as before -->
+        <svg id="moon" class="icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3 7 7 0 1021 12.79z"/></svg>
+        <svg id="sun" class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2m11-11h-2M3 12H1m17.07-7.07l-1.41 1.41M6.34 17.66l-1.41 1.41m12.02 0l1.41-1.41M6.34 6.34l-1.41-1.41"/></svg>
+      </button>
+    </nav>
+    <div class="hero-content fade-in">
+      <h1 class="hero-title"
+        data-ar="عبد المهيمن فركان"
+        data-fr="AbdElmouhaimen Ferkane"
+        data-en="AbdElmouhaimen Ferkane"
+      >عبد المهيمن فركان</h1>
+      <h2 class="hero-role"
+        data-ar="مطور ويب وتطبيقات محمولة | طالب سنة نهائية باحث عن PFE"
+        data-fr="Développeur Web & Mobile | Étudiant en dernière année à la recherche de PFE"
+        data-en="Web & Mobile Developer | Final-Year Student Seeking Internship"
+      >مطور ويب وتطبيقات محمولة | طالب سنة نهائية باحث عن PFE</h2>
+      <p class="hero-intro"
+        data-ar="شغوف بابتكار حلول رقمية تجمع بين الاحترافية والإبداع. أعتمد فلسفة البرمجة النظيفة والتطوير المستمر، مركزًا على بناء واجهات وتجارب عملية تترك أثراً فعلياً."
+        data-fr="Passionné par la création de solutions numériques élégantes et efficaces. Je privilégie une approche orientée qualité et innovation pour réaliser des expériences utilisateurs impactantes."
+        data-en="Passionate about delivering elegant, impactful digital solutions. I focus on clean code, continuous learning, and building outstanding user experiences."
+      >شغوف بابتكار حلول رقمية تجمع بين الاحترافية والإبداع. أعتمد فلسفة الب��مجة النظيفة والتطوير المستمر، مركزًا على بناء واجهات وتجارب عملية تترك أثراً فعلياً.</p>
       <div class="cta-buttons">
-        <a href="#projects" class="btn primary"
-           data-ar="مواقعي" data-fr="Mes Projets" data-en="My Projects">مواقعي</a>
-        <a href="#contact" class="btn outline"
-           data-ar="تواصل معي" data-fr="Me Contacter" data-en="Contact Me">تواصل معي</a>
+        <a href="#projects" class="btn primary" data-ar="مشاريعي" data-fr="Mes Projets" data-en="My Projects">مشاريعي</a>
+        <a href="#contact" class="btn secondary" data-ar="تواصل معي" data-fr="Contactez-moi" data-en="Contact Me">تواصل معي</a>
       </div>
     </div>
   </header>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2
-         data-ar="من أنا؟"
-         data-fr="À Propos de Moi"
-         data-en="About Me">من أنا؟</h2>
-      <p class="bio"
-         data-ar="أنا طالب متحمس وسريع التعلّم في تخصص تطوير الويب والتطبيقات المحمولة، مع شغف ببناء تطبيقات عملية وفعّالة. أتابع دراستي في <strong>المعهد الوطني المتخصص للتكوين المهني</strong> بالجزائر."
-         data-fr="Je suis un étudiant motivé et rapide à apprendre en développement web et mobile, passionné par la création d’applications pratiques. Je poursuis mes études à l’<strong>Institut National Spécialisé de Formation Professionnelle</strong> en Algérie."
-         data-en="I’m a motivated and fast-learning student in Web & Mobile Development, passionate about building practical applications. Currently studying at the <strong>National Institute of Specialized Training</strong> in Algeria."></p>
-      <p class="cooking-dev"
-         data-ar="أرى أن البرمجة والطبخ وجهان لعملة واحدة: كلاهما يتطلب <strong>النظافة، التنظيم، الدقة، والإبداع</strong>. سواء كنت أُصلح خطأ في كود Laravel أو أُعد طبقًا تقليديًا جزائريًا، فإنني أتعامل مع كل مهمة بتركيز وشغف."
-         data-fr="Je considère que la programmation et la cuisine sont deux faces d’une même pièce : les deux exigent <strong>propreté, organisation, précision et créativité</strong>. Que je débogue du code Laravel ou que je prépare un plat traditionnel algérien, j’aborde chaque tâche avec concentration et passion."
-         data-en="I see coding and cooking as two sides of the same coin: both require <strong>cleanliness, organization, precision, and creativity</strong>. Whether I’m debugging Laravel code or preparing a traditional Algerian dish, I approach every task with focus and passion."></p>
-    </div>
-  </section>
-
-  <!-- Technical Skills -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2
-         data-ar="المهارات التقنية"
-         data-fr="Compétences Techniques"
-         data-en="Technical Skills">المهارات التقنية</h2>
-      <div class="skills-grid">
+  <main>
+    <section id="about" class="section about-section">
+      <div class="about-container fade-in">
+        <div class="about-photo">
+          <img src="https://via.placeholder.com/200x200.png?text=AMF" alt="عبد المهيمن فركان Portrait" />
+        </div>
+        <div class="about-text">
+          <h3 data-ar="من أنا؟" data-fr="À propos de moi" data-en="About Me">من أنا؟</h3>
+          <p
+            data-ar="أمتلك شغفاً كبيراً بتطوير الويب والتطبيقات المحمولة. منذ أكثر من 5 سنوات، أنفذ حلولاً تجمع بين البرمجة النظيفة، التنظيم، والإبداع – مستفيداً من تقنيات حديثة كبناء مواقع ثلاثية اللغة وتنفيذ أفكار تربط البرمجة بالطهي: كلاهما يتطلبان النظافة والتنظيم والدقة والإبداع. أؤمن أن التكنولوجيا أداة لصناعة أثر حقيقي وملموس."
+            data-fr="Fort d’une expérience de plus de 5 ans en développement web et mobile, j’adopte une démarche centrée sur la qualité, l’organisation et la créativité. Pour moi, coder s’apparente à cuisiner : chaque recette ou projet nécessite propreté, rigueur et inspiration. Je mets la technologie au service de l’impact réel."
+            data-en="With over 5 years of experience in web and mobile development, I’m driven by clean code, organization, and creativity. For me, programming is like cooking: both require cleanliness, structure, accuracy, and imagination. My approach is to use technology as a tool for real-world impact."
+          >
+            أمتلك شغفاً كبيراً بتطوير الويب والتطبيقات المحمولة...
+          </p>
+          <ul class="about-info">
+            <li>
+              <strong data-ar="الاسم" data-fr="Nom" data-en="Name">الاسم</strong>
+              <span>عبد المهيمن فركان</span>
+            </li>
+            <li>
+              <strong data-ar="المدينة" data-fr="Ville" data-en="Location">المدينة</strong>
+              <span data-ar="الجزائر العاصمة" data-fr="Alger" data-en="Algiers">الجزائر العاصمة</span>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <a href="mailto:mouhaymen1412@gmail.com">mouhaymen1412@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="section skills-section">
+      <h3 class="section-title" data-ar="المهارات التقنية" data-fr="Compétences Techniques" data-en="Technical Skills">المهارات التقنية</h3>
+      <div class="skills-grid fade-in">
         <div class="skill-card">
-          <h3 data-ar="واجهة المستخدم" data-fr="Frontend" data-en="Frontend">واجهة المستخدم</h3>
+          <h4 data-ar="واجهة المستخدم" data-fr="Frontend" data-en="Frontend">واجهة المستخدم</h4>
           <ul>
             <li>HTML5</li>
             <li>CSS3</li>
@@ -81,198 +97,131 @@
           </ul>
         </div>
         <div class="skill-card">
-          <h3 data-ar="الخادم" data-fr="Backend" data-en="Backend">الخادم</h3>
+          <h4 data-ar="الخادم" data-fr="Backend" data-en="Backend">الخادم</h4>
           <ul>
             <li>PHP</li>
-            <li>Laravel (مبتدئ → متوسط)</li>
+            <li>Laravel</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3 data-ar="قاعدة البيانات" data-fr="Base de Données" data-en="Database">قاعدة البيانات</h3>
+          <h4 data-ar="قواعد البيانات" data-fr="Base de données" data-en="Database">قواعد البيانات</h4>
           <ul>
             <li>MySQL</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3 data-ar="أدوات أخرى" data-fr="Outils & Autres" data-en="Tools & Other">أدوات أخرى</h3>
+          <h4 data-ar="أدوات أخرى" data-fr="Outils & Autre" data-en="Tools & Other">أدوات أخرى</h4>
           <ul>
-            <li>Git / GitHub</li>
+            <li>Git & GitHub</li>
             <li>VS Code</li>
             <li>WordPress</li>
             <li>Photoshop</li>
-            <li>التسويق الرقمي</li>
+            <li data-ar="التسويق الرقمي" data-fr="Marketing Digital" data-en="Digital Marketing">التسويق الرقمي</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2
-         data-ar="الخبرة"
-         data-fr="Expérience"
-         data-en="Experience">الخبرة</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span data-ar="2023 – الحاضر" data-fr="2023 – Présent" data-en="2023 – Present">2023 – الحاضر</span>
-            <span>•</span>
-            <span data-ar="باب الزوار، الجزائر" data-fr="Bab Ezzouar, Algérie" data-en="Bab Ezzouar, Algeria">باب الزوار، الجزائر</span>
-          </div>
-          <h3
-             data-ar="عضو – المنظمة الوطنية للطلبة الأحرار"
-             data-fr="Membre – Organisation Nationale des Étudiants Libres"
-             data-en="Member – National Organization of Free Students">عضو – المنظمة الوطنية للطلبة الأحرار</h3>
-          <ul>
-            <li data-ar="التعاون في مشاريع جماعية وأنشطة أكاديمية"
-                data-fr="Collaboration sur des projets de groupe et activités académiques"
-                data-en="Collaborated on group projects and academic activities">التعاون في مشاريع جماعية وأنشطة أكاديمية</li>
-            <li data-ar="تنظيم فعاليات طلابية"
-                data-fr="Organisation d’événements étudiants"
-                data-en="Organized student events">تنظيم فعاليات طلابية</li>
-            <li data-ar="تنمية مهارات العمل الجماعي والتواصل"
-                data-fr="Renforcement du travail d’équipe et de la communication"
-                data-en="Strengthened teamwork and communication skills">تنمية مهارات العمل الجماعي والتواصل</li>
-          </ul>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span data-ar="2018 – الحاضر" data-fr="2018 – Présent" data-en="2018 – Present">2018 – الحاضر</span>
-            <span>•</span>
-            <span data-ar="الجزائر العاصمة" data-fr="Alger" data-en="Algiers">الجزائر العاصمة</span>
-          </div>
-          <h3
-             data-ar="بائع متجول"
-             data-fr="Vendeur Ambulant"
-             data-en="Street Vendor">بائع متجول</h3>
-          <ul>
-            <li data-ar="إدارة العمليات اليومية بشكل مستقل"
-                data-fr="Gestion autonome des opérations quotidiennes"
-                data-en="Managed daily operations independently">إدارة العمليات اليومية بشكل مستقل</li>
-            <li data-ar="تطوير مهارات حل المشكلات والتفاعل مع العملاء"
-                data-fr="Développement de compétences en résolution de problèmes"
-                data-en="Developed problem-solving and customer interaction skills">تطوير مهارات حل المشكلات والتفاعل مع العملاء</li>
-            <li data-ar="إظهار الانضباط والمرونة والمسؤولية"
-                data-fr="Preuve de discipline, d’adaptabilité et de responsabilité"
-                data-en="Demonstrated discipline, adaptability, and responsibility">إظهار الانضباط والمرونة والمسؤولية</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2
-         data-ar="مواقعي"
-         data-fr="Projets"
-         data-en="Projects">مواقعي</h2>
-      <p class="section-note"
-         data-ar="*(استبدل هذه الأمثلة بمواقعك الفعلية)*"
-         data-fr="*(Remplacez par vos projets réels)*"
-         data-en="*(Replace with your actual projects)*">*(استبدل هذه الأمثلة بمواقعك الفعلية)*</p>
-      
-      <div class="projects-grid">
+    </section>
+    <section id="projects" class="section projects-section">
+      <h3 class="section-title" data-ar="مشاريعي" data-fr="Projets" data-en="Projects">مشاريعي</h3>
+      <div class="projects-grid fade-in">
         <div class="project-card">
-          <h3 class="project-title"
-              data-ar="[اسم المشروع 1]"
-              data-fr="[Project Title 1]"
-              data-en="[Project Title 1]">[اسم المشروع 1]</h3>
-          <p class="project-desc"
-             data-ar="[وصف موجز بالعربية]"
-             data-fr="[Short description in French]"
-             data-en="[Short description in English]">[وصف موجز بالعربية]</p>
-          <div class="project-links">
-            <span class="local-note"
-                  data-ar="متاح محليًا"
-                  data-fr="Disponible en local"
-                  data-en="Available locally">متاح محليًا</span>
-            <a href="#" target="_blank">الكود المصدري</a>
-          </div>
+          <h4 data-ar="نظام مراقبة الأسطول" data-fr="Fleet Monitor" data-en="Fleet Monitor">نظام مراقبة الأسطول</h4>
+          <p data-ar="لوحة تحكم متقدمة لمراقبة ومتابعة الأجهزة المتصلة بالشركة في الوقت الفعلي." data-fr="Dashboard avancé pour le monitoring des dispositifs connectés en temps réel." data-en="Advanced dashboard for monitoring connected device fleets in real time.">
+            لوحة تحكم متقدمة لمراقبة ...
+          </p>
+          <a href="#" class="project-link" target="_blank" data-ar="رابط المشروع" data-fr="Voir Projet" data-en="View Project">رابط المشروع</a>
         </div>
         <div class="project-card">
-          <h3 class="project-title"
-              data-ar="[اسم المشروع 2]"
-              data-fr="[Project Title 2]"
-              data-en="[Project Title 2]">[اسم المشروع 2]</h3>
-          <p class="project-desc"
-             data-ar="[وصف آخر]"
-             data-fr="[Another description]"
-             data-en="[Another description]">[وصف آخر]</p>
-          <div class="project-links">
-            <span class="local-note"
-                  data-ar="متاح محليًا"
-                  data-fr="Disponible en local"
-                  data-en="Available locally">متاح محليًا</span>
-            <a href="#" target="_blank">الكود المصدري</a>
-          </div>
+          <h4 data-ar="منصة التحليلات المالية" data-fr="Plateforme Analytics" data-en="Analytics Platform">منصة التحليلات المالية</h4>
+          <p data-ar="منصة سحابية لتحليل البيانات المالية واكتشاف الأنماط والتنبؤ بالمؤشرات." data-fr="Plateforme cloud pour l’analyse, la détection de tendances et la prédiction d’indicateurs financiers." data-en="Cloud-based analytics platform for trends and predictive KPIs.">
+            منصة سحابية...
+          </p>
+          <a href="#" class="project-link" target="_blank" data-ar="رابط المشروع" data-fr="Voir Projet" data-en="View Project">رابط المشروع</a>
+        </div>
+        <div class="project-card">
+          <h4 data-ar="حزمة مكونات الواجهة" data-fr="Kit UI/UX" data-en="UXFlow Kit">حزمة مكونات الواجهة</h4>
+          <p data-ar="حزمة مكونات UI/UX مفتوحة المصدر مع أداء عالي ودعم كامل للتعدد اللغوي." data-fr="Kit de composants UI/UX open-source multilingue et performant." data-en="Open-source UI kit with best-in-class accessibility and multilingual support.">
+            حزمة مكونات ...
+          </p>
+          <a href="#" class="project-link" target="_blank" data-ar="رابط المشروع" data-fr="Voir Projet" data-en="View Project">رابط المشروع</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2
-         data-ar="تواصل معي"
-         data-fr="Contactez-Moi"
-         data-en="Get In Touch">تواصل معي</h2>
-      <p class="contact-intro"
-         data-ar="أنا منفتح على فرص PFE، التعاون، أو حتى محادثة ودية!"
-         data-fr="Je suis ouvert aux opportunités de PFE, collaborations, ou simplement une discussion amicale !"
-         data-en="I'm open to PFE opportunities, collaborations, or just a friendly chat!">أنا منفتح على فرص PFE، التعاون، أو حتى محادثة ودية!</p>
-      
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> <a href="mailto:mouhaymen1412@gmail.com">mouhaymen1412@gmail.com</a></p>
-        <p><i class="fas fa-phone"></i> +213 774 52 17 12</p>
-        <p><i class="fas fa-map-marker-alt"></i> الجزائر العاصمة، الجزائر</p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/mouhaymen1412-prog" target="_blank">github.com/mouhaymen1412-prog</a></p>
-        <p><i class="fas fa-globe"></i> <a href="https://mouhaymen1412-prog.github.io/portfolio/" target="_blank">موقعي الشخصي</a></p>
+    </section>
+    <section id="experience" class="section experience-section">
+      <h3 class="section-title" data-ar="الخبرة" data-fr="Expérience" data-en="Experience">الخبرة</h3>
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <div class="timeline-date" data-ar="2023 – الحاضر" data-fr="2023 – Présent" data-en="2023 – Present">2023 – الحاضر</div>
+          <div class="timeline-role" data-ar="عضو – المنظمة الوطنية للطلبة الأحرار" data-fr="Membre – Organisation Nationale des Étudiants Libres" data-en="Member – National Organization of Free Students">عضو – المنظمة الوطنية للطلبة الأحرار</div>
+          <ul class="timeline-achievements">
+            <li data-ar="المساهمة في المشاريع والأنشطة الجماعية والأكاديمية" data-fr="Participation à des projets de groupe & activités académiques" data-en="Collaborated on group projects and academic initiatives">
+              المساهمة في المشاريع...
+            </li>
+            <li data-ar="تنظيم فعاليات طلابية" data-fr="Organisation d’événements étudiants" data-en="Organized student events">تنظيم فعاليات طلابية</li>
+            <li data-ar="تطوير مهارات التواصل والعمل الجماعي" data-fr="Renforcement du travail d’équipe et de la communication" data-en="Strengthened teamwork and communication skills">تطوير مهارات التواصل</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-ar="2018 – الحاضر" data-fr="2018 – Présent" data-en="2018 – Present">2018 – الحاضر</div>
+          <div class="timeline-role" data-ar="بائع متجول" data-fr="Vendeur Ambulant" data-en="Street Vendor">بائع متجول</div>
+          <ul class="timeline-achievements">
+            <li data-ar="إدارة العمليات اليومية والتعامل مع العملاء بكفاءة" data-fr="Gestion autonome des opérations quotidiennes & clientèle" data-en="Managed daily operations and client interaction independently">
+              إدارة العمليات اليومية...
+            </li>
+            <li data-ar="تطوير مهارات الحلول السريعة والانضباط والمرونة" data-fr="Développement de compétences en résolution de problèmes et adaptabilité" data-en="Developed problem-solving, discipline, and flexibility">تطوير مهارات الحلول...</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="social-links">
-        <a href="https://github.com/mouhaymen1412-prog" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://t.me/yourtelegram" target="_blank" aria-label="Telegram">
-          <i class="fab fa-telegram"></i>
-        </a>
-        <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="mailto:mouhaymen1412@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+    </section>
+    <section id="services" class="section services-section">
+      <h3 class="section-title" data-ar="الخدمات" data-fr="Services" data-en="Services">الخدمات</h3>
+      <div class="services-grid fade-in">
+        <div class="service-card">
+          <h4 data-ar="تطوير مواقع ويب وتطبيقات مخصصة" data-fr="Développement Web & Applications" data-en="Custom Web & App Development">تطوير مواقع ويب وتطبيقات مخصصة</h4>
+          <p data-ar="تسليم حلول رقمية متكاملة مصممة حسب احتياج العميل تبدأ من الفكرة إلى منتج نهائي متجاوب واحترافي." data-fr="Solutions sur-mesure clé en main — de l’idée au produit final, responsive et intuitif." data-en="End-to-end digital solutions, from idea to production, with responsive, tailored apps."></p>
+        </div>
+        <div class="service-card">
+          <h4 data-ar="هندسة البرمجيات والسيرفر" data-fr="Architecture Logicielle & Serveur" data-en="Software & Server Architecture">هندسة البرمجيات والسيرفر</h4>
+          <p data-ar="تصميم بنى متقدمة وقابلة للتوسع، ودمج التقنيات السحابية لضمان الأداء العالي والثبات." data-fr="Architecture évolutive, intégration cloud pour une performance optimale." data-en="Advanced, scalable architecture; cloud integration for optimal performance."></p>
+        </div>
+        <div class="service-card">
+          <h4 data-ar="استشارات تقنية" data-fr="Conseil Technique" data-en="Technical Consulting">استشارات تقنية</h4>
+          <p data-ar="مراجعة شاملة وتحليل للأنظمة البرمجية واقتراح حلول لتحسين الجودة والابتكار." data-fr="Audit des systèmes et suggestions d’optimisation pour l’innovation." data-en="Full-stack code audits and solution consulting for innovation."></p>
+        </div>
+        <div class="service-card">
+          <h4 data-ar="تصميم واجهات وتجربة المستخدم" data-fr="Design UI/UX" data-en="UI/UX Design">تصميم واجهات وتجربة المستخدم</h4>
+          <p data-ar="إنشاء واجهات حديثة موجهة للمستخدم لزيادة التفاعل وسهولة الاستخدام." data-fr="Interfaces modernes et ergonomiques orientées expérience utilisateur." data-en="Modern, accessible interfaces to maximize engagement."></p>
+        </div>
       </div>
-
-      <div class="pfe-button">
-        <a href="mailto:mouhaymen1412@gmail.com?subject=Demande%20de%20PFE%20-%20AbdElmouhaimen%20Ferkane&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20effectuer%20mon%20PFE%20au%20sein%20de%20votre%20entreprise..." 
-           class="btn primary"
-           data-ar="أرسل طلب PFE الآن"
-           data-fr="Envoyer une demande de PFE"
-           data-en="Send PFE Request Now">أرسل طلب PFE الآن</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p class="footer-copyright"
-         data-ar="&copy; 2026 جميع الحقوق محفوظة لـ عبد المؤمن فرقان"
-         data-fr="&copy; 2026 Tous droits réservés — AbdElmouhaimen Ferkane"
-         data-en="&copy; 2026 All rights reserved — AbdElmouhaimen Ferkane">
-        &copy; 2026 جميع الحقوق محفوظة لـ عبد المؤمن فرقان
+    </section>
+    <section id="career-objective" class="section objective-section fade-in">
+      <h3 class="section-title" data-ar="الهدف المهني" data-fr="Objectif Professionnel" data-en="Career Objective">الهدف المهني</h3>
+      <p data-ar="هدفي قيادة مشاريع رقمية مبتكرة تساهم في تطوير المجتمع التقني الوطني والعالمي، مع الحرص الدائم على نقل الخبرة وتكوين جيل جديد من المطورين متعددي المهارات." data-fr="Mon objectif : piloter des projets numériques à fort impact, former la relève et contribuer activement à la tech algérienne et internationale." data-en="My goal: Drive high-impact digital projects, mentor the next generation of developers, and make a difference in the Algerian and global tech community.">
+        هدفي قيادة مشاريع...
       </p>
+    </section>
+    <section id="contact" class="section contact-section fade-in">
+      <h3 class="section-title" data-ar="تواصل معي" data-fr="Contact" data-en="Contact">تواصل معي</h3>
+      <form class="contact-form" autocomplete="off">
+        <input type="text" name="name" placeholder="اسمك*" required data-ar="اسمك*" data-fr="Votre nom*" data-en="Your Name*" />
+        <input type="email" name="email" placeholder="بريدك*" required data-ar="بريدك*" data-fr="Votre email*" data-en="Your Email*" />
+        <textarea name="message" rows="5" placeholder="رسالتك*" required data-ar="رسالتك*" data-fr="Votre message*" data-en="Your Message*"></textarea>
+        <button type="submit" class="btn primary" data-ar="إرسال" data-fr="Envoyer" data-en="Send">إرسال</button>
+      </form>
+      <div class="contact-links">
+        <a href="https://youtube.com/" target="_blank" aria-label="YouTube">YouTube</a>
+        <a href="https://linkedin.com/in/ferkane-abdelmouhaimen" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/mouhaymen1412-prog" target="_blank" aria-label="GitHub">GitHub</a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">Facebook</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p data-ar="© 2026 عبد المهيمن فركان. جميع الحقوق محفوظة." data-fr="© 2026 AbdElmouhaimen Ferkane. Tous droits réservés." data-en="© 2026 AbdElmouhaimen Ferkane. All rights reserved.">© 2026 عبد المهيمن فركان. جميع الحقوق محفوظة.</p>
+      <a href="#hero" class="back-to-top" title="Back to Top" data-ar="⮭ أعلى الصفحة" data-fr="⮭ Haut de page" data-en="⮭ Back to Top">⮭ أعلى الصفحة</a>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
