@@ -1,105 +1,78 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const langButtons = document.querySelectorAll('.lang-btn');
-  let currentLang = localStorage.getItem('portfolio-lang') || 'ar';
+// === Theme Toggle ===
+const themeToggle = document.getElementById('theme-toggle');
+function setDarkMode(dark) {
+  document.body.classList.toggle('light', !dark);
+  document.body.classList.toggle('dark', dark);
+  localStorage.setItem('preferred-theme', dark ? 'dark' : 'light');
+}
+const saved = localStorage.getItem('preferred-theme');
+setDarkMode(saved ? saved === 'dark' : true);
+themeToggle.addEventListener('click', () => {
+  setDarkMode(!document.body.classList.contains('dark'));
+});
 
-  updateLanguage(currentLang);
-  document.body.className = `lang-${currentLang}`;
-
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLang = btn.dataset.lang;
-      updateLanguage(currentLang);
-      document.body.className = `lang-${currentLang}`;
-      localStorage.setItem('portfolio-lang', currentLang);
-      langButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
+// === Language Switcher ===
+const langBtns = document.querySelectorAll('.lang-btn');
+let currentLang = localStorage.getItem('portfolio-lang') || 'ar';
+function updateLang(lang) {
+  // Update html/lang and dir
+  document.documentElement.lang = lang;
+  document.body.classList.forEach(c => {
+    if(c.startsWith('lang-')) document.body.classList.remove(c);
   });
+  document.body.classList.add('lang-' + lang);
+  document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  // All elements with data-*
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    // Input, textarea placeholder or value
+    if(el.placeholder !== undefined) {
+      el.placeholder = el.getAttribute('data-' + lang) || el.placeholder;
+    } else if(el.value !== undefined && el.tagName === 'INPUT') {
+      el.value = el.getAttribute('data-' + lang) || el.value;
+    } else {
+      el.innerHTML = el.getAttribute('data-' + lang) || el.innerHTML;
+    }
+  });
+  // Mark active btn
+  langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+  currentLang = lang;
+  localStorage.setItem('portfolio-lang', lang);
+}
+langBtns.forEach(btn => {
+  btn.addEventListener('click', () => updateLang(btn.dataset.lang));
+});
+updateLang(currentLang);
 
-  function updateLanguage(lang) {
-    // Greeting & Name
-    document.querySelectorAll('.greeting').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-
-    document.querySelectorAll('.name').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-
-    // Project titles & desc
-    document.querySelectorAll('.project-title').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-
-    document.querySelectorAll('.project-desc').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-
-    document.querySelectorAll('.local-note').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-
-    // Timeline dates & titles
-    document.querySelectorAll('[data-ar]').forEach(el => {
-      const ar = el.getAttribute('data-ar');
-      const fr = el.getAttribute('data-fr');
-      const en = el.getAttribute('data-en');
-
-      if (lang === 'ar' && ar) el.innerHTML = ar;
-      else if (lang === 'fr' && fr) el.innerHTML = fr;
-      else if (lang === 'en' && en) el.innerHTML = en;
-    });
-
-    // Footer copyright
-    document.querySelectorAll('.footer-copyright').forEach(el => {
-      if (lang === 'ar') el.textContent = el.getAttribute('data-ar') || '';
-      else if (lang === 'fr') el.textContent = el.getAttribute('data-fr') || '';
-      else if (lang === 'en') el.textContent = el.getAttribute('data-en') || '';
-    });
-  }
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+// === Navbar smooth scroll & active section ===
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    if(link.hash) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
+      document.querySelector(link.hash).scrollIntoView({behavior: "smooth"});
+      history.replaceState(null, null, link.hash);
+    }
   });
+});
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.section').forEach(sec => {
-    sec.classList.add('fade-in');
-    sec.style.opacity = 0;
-    sec.style.transform = 'translateY(20px)';
-    sec.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(sec);
+// === Fade-in On Scroll ===
+function inViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight - 32 && rect.bottom > 80;
+}
+function revealOnScroll() {
+  document.querySelectorAll('.fade-in').forEach(el => {
+    if(inViewport(el)) el.classList.add('in-view');
   });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-  const style = document.createElement('style');
-  style.textContent = `.fade-in { opacity: 1 !important; transform: translateY(0) !important; }`;
-  document.head.appendChild(style);
+// === Contact Form (demo) ===
+document.querySelector('.contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  alert(
+    currentLang === 'ar' ? 'تم إرسال رسالتك (نموذج تجريبي).' : 
+    currentLang === 'fr' ? 'Votre message a été envoyé (démo).' : 
+    'Your message has been sent (demo).'
+  );
 });
